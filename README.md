@@ -2,7 +2,7 @@
 
 instruction to run application on mac terminal: ./mvnw spring-boot:run 
 
-pre-installation note and dependencies:
+Pre-installation note and dependencies:
 ---------------------------------------
 -java 1.8 version 
 -apache-maven-3.6.3. 
@@ -36,7 +36,7 @@ example of configuration rule is in ItemEligibilityRuleImpl.java implementation
 and example of non-configurable rule is in SeasonEligibilityRuleImpl
 
 
-below is an example response format for api:
+Below is an example response format for api:
 -------------------------------------
     "IS_ITEM_ELIGIBLE": false, (will be true for Eligible criterias)
     "ELIGIBILITY_CRITERIA": {
