@@ -18,7 +18,9 @@ public class ItemEligibilityRuleImpl implements ShippingEligibilityRule {
 	private EligibilityProperties properties;
 	
 
-	@Override
+	/*
+	 * checks enrolled seller, pre-approved category and price greater than min limit
+	 */
 	public boolean isEligible(EligibilityForm eligiblityForm) {
 		boolean ItemEligible=false;
 		if(isEnrolledSeller(eligiblityForm.getSeller())&& isEligiblePrice(eligiblityForm.getPrice())&& isPreapprovedCategory(eligiblityForm.getCategory())) {
@@ -28,7 +30,9 @@ public class ItemEligibilityRuleImpl implements ShippingEligibilityRule {
 	}
 	
 	
-	
+	/*
+	 * checks enrolled seller
+	 */
 	public boolean isEnrolledSeller(String seller) {
 		boolean isEnrolledSeller=false;
 		for(String enrSeller:properties.getSeller()) {
@@ -41,6 +45,9 @@ public class ItemEligibilityRuleImpl implements ShippingEligibilityRule {
 		return isEnrolledSeller;
 	}
 	
+	/*
+	 * price greater or equals than min limit
+	 */
 	public boolean isEligiblePrice(double price) {
 		boolean isEligiblePrice=false;
 		if(price>=properties.getPrice()) {
@@ -51,6 +58,9 @@ public class ItemEligibilityRuleImpl implements ShippingEligibilityRule {
 		return isEligiblePrice;
 	}
 	
+	/*
+	 * category pre-approved
+	 */
 	public boolean isPreapprovedCategory(int category) {
 		boolean isPreapprovedCategory=false;
 		for(int preAprCategory: properties.getCategory()) {

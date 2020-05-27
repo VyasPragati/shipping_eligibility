@@ -30,7 +30,9 @@ public class ShippingController {
 	
 	@Autowired
 	private ErrorResponse errorResponse;
-	
+	/*
+	 * Service returns itemeligible or not for shipping along with eligibility criteria and error messages
+	 */
 	@RequestMapping(method=RequestMethod.POST,value="/v1/isItemEligible")
 	public Map<String,Object> checkEligibility(@RequestBody EligibilityForm eligiblityForm ) {
 		try {

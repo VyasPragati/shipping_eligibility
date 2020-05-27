@@ -67,7 +67,9 @@ public class EligibilityProperties {
 	public void setItemEligible(boolean isItemEligible) {
 		this.isItemEligible = isItemEligible;
 	}
-	
+	/*
+	 * Returns mapped data for eleigibility response
+	 */
 	public Map<String,Object>getMappedResponse(){
 		
 		 Map<String,Object> response= new HashMap<String,Object>();

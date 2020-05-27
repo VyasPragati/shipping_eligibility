@@ -20,7 +20,9 @@ public class ShippingEligibilityService {
 	public boolean isEligibleForShipping(EligibilityForm form) {
 		return itemEligibilityRule.isEligible(form)&& seasonEligibilityRule.isEligible(form);
 	}
-	
+	/*
+	 * Checks if params passed in service request are valid or not
+	 */
 	public String isRequestValid(EligibilityForm form) {
 		String seller=form.getSeller();	
 		Double price=form.getPrice();

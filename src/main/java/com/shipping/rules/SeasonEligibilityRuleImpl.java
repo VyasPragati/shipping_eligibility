@@ -15,7 +15,9 @@ public class SeasonEligibilityRuleImpl implements ShippingEligibilityRule {
 	@Autowired
 	private ItemEligibilityRuleImpl itemEligibilityRule;
 
-	@Override
+	/*
+	 * Item is eligible for shipping if season is summer and category is pre-approved
+	 */
 	public boolean isEligible(EligibilityForm eligiblityForm) {
 		LocalDate currentDate = LocalDate.now();
 		Month month = currentDate.getMonth(); 
