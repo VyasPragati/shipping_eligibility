@@ -1,17 +1,23 @@
 package com.shipping.rules;
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.shipping.bean.EligibilityForm;
 import com.shipping.bean.EligibilityProperties;
+import com.shipping.program.ShippingController;
 
 @Component
 public class ItemEligibilityRuleImpl implements ShippingEligibilityRule {
 
+	private static final Logger logger = LoggerFactory.getLogger(ShippingController.class);
 	@Autowired
 	private EligibilityProperties properties;
 	
+
 	@Override
 	public boolean isEligible(EligibilityForm eligiblityForm) {
 		boolean ItemEligible=false;
@@ -31,15 +37,17 @@ public class ItemEligibilityRuleImpl implements ShippingEligibilityRule {
 			    return isEnrolledSeller;
 			}
 		}
+		logger.error("Seller not enrolled");
 		return isEnrolledSeller;
 	}
 	
 	public boolean isEligiblePrice(double price) {
 		boolean isEligiblePrice=false;
-		if(price<=properties.getPrice()) {
+		if(price>=properties.getPrice()) {
 				isEligiblePrice=true;
 				return isEligiblePrice;
 		}
+		logger.error("Price less than min value eligible for shipping");
 		return isEligiblePrice;
 	}
 	
@@ -51,7 +59,16 @@ public class ItemEligibilityRuleImpl implements ShippingEligibilityRule {
 				return isPreapprovedCategory;
 			}
 		}
+		logger.error("Category not pre-approved");
 		return isPreapprovedCategory;
 	}
 
+	public EligibilityProperties getProperties() {
+		return properties;
+	}
+
+
+	public void setProperties(EligibilityProperties properties) {
+		this.properties = properties;
+	}
 }

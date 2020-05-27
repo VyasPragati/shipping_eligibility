@@ -24,5 +24,13 @@ public class SeasonEligibilityRuleImpl implements ShippingEligibilityRule {
 		}
 		return false;
 	}
+	
+	public ItemEligibilityRuleImpl getItemEligibilityRule() {
+		return itemEligibilityRule;
+	}
+
+	public void setItemEligibilityRule(ItemEligibilityRuleImpl itemEligibilityRule) {
+		this.itemEligibilityRule = itemEligibilityRule;
+	}
 
 }

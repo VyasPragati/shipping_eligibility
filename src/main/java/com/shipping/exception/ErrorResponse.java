@@ -10,10 +10,12 @@ public class ErrorResponse
 	
 
 	//General error message about nature of error
-    private String message;
+    private String message=null;
  
     //Specific errors in API request processing
-    private List<String> details;
+    private List<String> details=null;
+    
+    private int status=200;
     
     public String getMessage() {
 		return message;
@@ -33,6 +35,14 @@ public class ErrorResponse
 
 	public void setDetails(List<String> details) {
 		this.details = details;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
 	}
 
  

@@ -24,11 +24,19 @@ public class EligibilityProperties {
 	@Autowired
 	ErrorResponse errorResponse;
 	
+	private EligibilityProperties propertInstance;
+	
+    public void refreshProperties() {
+        synchronized (this) {
+        	propertInstance = new EligibilityProperties();
+        }
+    }
+	
 	private ErrorResponse error;
 	private List<String> seller;
 	private List <Integer> category;
 	private Double price;
-	private boolean isItemEligible;
+	private boolean isItemEligible=false;
 	public List<String> getSeller() {
 		return seller;
 	}

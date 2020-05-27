@@ -1,13 +1,15 @@
-package com.example.demo;
+package com.shipping.program;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoApplicationTests {
+class AppTest {
 
 	@Test
-	void contextLoads() {
+	public void contextLoads() {
 	}
 
 }

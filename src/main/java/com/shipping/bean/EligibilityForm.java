@@ -5,6 +5,13 @@ public class EligibilityForm {
 	private String seller;
 	private Integer category;
 	private Double price;
+	
+	public EligibilityForm(String seller,Integer category,Double price){
+		this.seller=seller;
+		this.category=category;
+		this.price=price;
+	}
+	
 	public String getSeller() {
 		return seller;
 	}

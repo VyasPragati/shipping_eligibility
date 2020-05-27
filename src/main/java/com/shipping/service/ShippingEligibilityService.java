@@ -13,7 +13,7 @@ public class ShippingEligibilityService {
 	
 	@Autowired
 	private ItemEligibilityRuleImpl itemEligibilityRule;
-	
+
 	@Autowired
 	private SeasonEligibilityRuleImpl seasonEligibilityRule;
 	
@@ -37,4 +37,20 @@ public class ShippingEligibilityService {
 		return null;
 	}
 	
+	//Auto Generated Getters and Setters
+	public ItemEligibilityRuleImpl getItemEligibilityRule() {
+		return itemEligibilityRule;
+	}
+
+	public void setItemEligibilityRule(ItemEligibilityRuleImpl itemEligibilityRule) {
+		this.itemEligibilityRule = itemEligibilityRule;
+	}
+
+	public SeasonEligibilityRuleImpl getSeasonEligibilityRule() {
+		return seasonEligibilityRule;
+	}
+
+	public void setSeasonEligibilityRule(SeasonEligibilityRuleImpl seasonEligibilityRule) {
+		this.seasonEligibilityRule = seasonEligibilityRule;
+	}
 }
